@@ -18,7 +18,7 @@ class _NavigationBar_WebState extends State<NavigationBar_Web> {
   @override
   Widget build(BuildContext context) {
     return NavigationRail(
-      backgroundColor: Colors.blue[200],
+      backgroundColor: Colors.lightBlue[900],
       indicatorColor: Colors.blue[400],
       selectedIconTheme: IconThemeData(color: Colors.white),
       selectedIndex: _selectedIndex,
@@ -31,7 +31,7 @@ class _NavigationBar_WebState extends State<NavigationBar_Web> {
       labelType: labelType,
       leading: showLeading
           ? Container(
-              margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
+              margin: const EdgeInsets.fromLTRB(0, 0, 0, 20),
               child: FloatingActionButton(
                 elevation: 0,
                 onPressed: () {
@@ -56,18 +56,20 @@ class _NavigationBar_WebState extends State<NavigationBar_Web> {
       destinations: const <NavigationRailDestination>[
         NavigationRailDestination(
           icon: Tooltip(
-            child: Icon(Icons.article_outlined),
+            child: Icon(Icons.article_outlined, color: Colors.white54),
             message: "Resume Optimizer",
           ),
           selectedIcon: Tooltip(
-            child: Icon(Icons.article),
+            child: Icon(
+              Icons.article,
+            ),
             message: "Resume Optimizer",
           ),
           label: Text(''),
         ),
         NavigationRailDestination(
           icon: Tooltip(
-            child: Icon(Icons.build_outlined),
+            child: Icon(Icons.build_outlined, color: Colors.white54),
             message: "Manage LinkedIn Profile",
           ),
           selectedIcon: Tooltip(
@@ -78,7 +80,7 @@ class _NavigationBar_WebState extends State<NavigationBar_Web> {
         ),
         NavigationRailDestination(
           icon: Tooltip(
-            child: Icon(Icons.directions),
+            child: Icon(Icons.directions, color: Colors.white54),
             message: "Personalized Career Recommendations",
           ),
           selectedIcon: Tooltip(

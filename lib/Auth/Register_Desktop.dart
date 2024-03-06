@@ -1,3 +1,4 @@
+import 'package:ace_applicant/Auth/Google_Button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import "package:flutter/gestures.dart";
@@ -234,7 +235,12 @@ class _RegisterState extends State<Register> {
                       ),
                     ]),
                     // SizedBox(height: 15),
-                    _loginWithButton(image: "assets/images/google.png"),
+                    // _loginWithButton(image: "assets/images/google.png"),
+                    GoogleBtn1(
+                      onPressed: () {},
+                      isDesktop: true,
+                    ),
+
                     SizedBox(height: 15),
                     RichText(
                       text: TextSpan(children: [
