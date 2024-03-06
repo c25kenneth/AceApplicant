@@ -18,7 +18,10 @@ class _NavigationBar_Mobile_WebState extends State<NavigationBar_Mobile_Web> {
     return Align(
       alignment: Alignment.topRight,
       child: PopupMenuButton<SampleItem>(
-        icon: Icon(Icons.menu),
+        icon: Icon(
+          Icons.menu,
+          size: 45,
+        ),
         initialValue: selectedItem,
         onSelected: (SampleItem item) {
           setState(() {
