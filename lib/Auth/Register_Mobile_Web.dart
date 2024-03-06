@@ -22,42 +22,42 @@ class _RegisterMobileWebState extends State<RegisterMobileWeb> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            // Container(
-            //     child: Stack(
-            //   children: [
-            //     Container(
-            //       color: Colors.blue[500],
-            //     ),
-            //     Column(
-            //       crossAxisAlignment: CrossAxisAlignment.center,
-            //       mainAxisAlignment: MainAxisAlignment.center,
-            //       children: [
-            //         FittedBox(
-            //           fit: BoxFit.scaleDown,
-            //           child: Container(
-            //             margin: EdgeInsets.fromLTRB((screenWidth / 2) * 0.45, 0,
-            //                 (screenWidth / 2) * 0.45, 0),
-            //             child: Text(
-            //               'Become An Ace Candidate in Seconds',
-            //               style: TextStyle(
-            //                   fontSize: 55,
-            //                   fontWeight: FontWeight.bold,
-            //                   color: Colors.white),
-            //             ),
-            //           ),
-            //         ),
-            //         SizedBox(height: 32),
-            //         Center(
-            //           child: SvgPicture.asset(
-            //             "assets/images/undraw_career_progress_ivdb.svg",
-            //             width: (screenWidth / 2) * 0.5,
-            //             height: (screenWidth / 2) * 0.25,
-            //           ),
-            //         ),
-            //       ],
-            //     ),
-            //   ],
-            // )),
+            Container(
+                child: Stack(
+              children: [
+                Container(
+                  color: Colors.blue[500],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Container(
+                        margin: EdgeInsets.fromLTRB((screenWidth / 2) * 0.45, 0,
+                            (screenWidth / 2) * 0.45, 0),
+                        child: Text(
+                          'Become An Ace Candidate in Seconds',
+                          style: TextStyle(
+                              fontSize: 55,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 32),
+                    Center(
+                      child: SvgPicture.asset(
+                        "assets/images/undraw_career_progress_ivdb.svg",
+                        width: screenWidth * 0.75,
+                        height: screenWidth * 0.45,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            )),
             Container(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -212,7 +212,33 @@ class _RegisterMobileWebState extends State<RegisterMobileWeb> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 15),
+                  SizedBox(height: 20),
+
+                  RichText(
+                      text: TextSpan(children: [
+                    TextSpan(
+                      text: 'By creating an account, you agree to our ',
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 15,
+                      ),
+                    ),
+                    TextSpan(
+                        text: 'Terms and Conditions',
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: 15,
+                        ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            print('Login Text Clicked');
+                          }),
+                  ])),
+
+                  SizedBox(
+                    height: 15,
+                  ),
+
                   Row(children: [
                     Expanded(
                       child: Divider(
@@ -238,23 +264,23 @@ class _RegisterMobileWebState extends State<RegisterMobileWeb> {
                   SizedBox(height: 15),
                   RichText(
                     text: TextSpan(children: [
-                      TextSpan(
-                        text: 'By creating an account, you agree to our ',
-                        style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 15,
-                        ),
-                      ),
-                      TextSpan(
-                          text: 'Terms and Conditions',
-                          style: TextStyle(
-                            color: Colors.blue,
-                            fontSize: 15,
-                          ),
-                          recognizer: TapGestureRecognizer()
-                            ..onTap = () {
-                              print('Login Text Clicked');
-                            }),
+                      // TextSpan(
+                      //   text: 'By creating an account, you agree to our ',
+                      //   style: TextStyle(
+                      //     color: Colors.grey,
+                      //     fontSize: 15,
+                      //   ),
+                      // ),
+                      // TextSpan(
+                      //     text: 'Terms and Conditions',
+                      //     style: TextStyle(
+                      //       color: Colors.blue,
+                      //       fontSize: 15,
+                      //     ),
+                      //     recognizer: TapGestureRecognizer()
+                      //       ..onTap = () {
+                      //         print('Login Text Clicked');
+                      //       }),
                       TextSpan(
                         text: '. ',
                         style: TextStyle(

@@ -3,6 +3,7 @@ import 'package:ace_applicant/Auth/Register_Mobile_Web.dart';
 import 'package:ace_applicant/Auth/SignIn_Desktop.dart';
 import 'package:ace_applicant/Auth/SignIn_Mobile_Web.dart';
 import 'package:ace_applicant/Error404.dart';
+import 'package:ace_applicant/Home/Home.dart';
 import 'package:ace_applicant/responsive_layout.dart';
 import 'package:flutter/material.dart';
 import "package:go_router/go_router.dart";
@@ -38,6 +39,11 @@ GoRouter _appRoute = GoRouter(
           builder: (BuildContext context, GoRouterState state) {
             return ResponsiveLayout(
                 mobileBody: RegisterMobileWeb(), desktopBody: Register());
+          }),
+      GoRoute(
+          path: "/home",
+          builder: (BuildContext context, GoRouterState state) {
+            return Home();
           })
     ]);
 
