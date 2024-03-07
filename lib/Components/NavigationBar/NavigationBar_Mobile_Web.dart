@@ -8,7 +8,13 @@ class NavigationBar_Mobile_Web extends StatefulWidget {
       _NavigationBar_Mobile_WebState();
 }
 
-enum SampleItem { resume, linkedin_profile, personalized_rec }
+enum SampleItem {
+  resume,
+  linkedin_profile,
+  personalized_rec,
+  signout,
+  view_profile
+}
 
 class _NavigationBar_Mobile_WebState extends State<NavigationBar_Mobile_Web> {
   SampleItem? selectedItem;
@@ -27,7 +33,7 @@ class _NavigationBar_Mobile_WebState extends State<NavigationBar_Mobile_Web> {
           setState(() {
             selectedItem = item;
           });
-          print(selectedItem);
+          // print(selectedItem);
         },
         itemBuilder: (BuildContext context) => <PopupMenuEntry<SampleItem>>[
           const PopupMenuItem<SampleItem>(
@@ -41,6 +47,14 @@ class _NavigationBar_Mobile_WebState extends State<NavigationBar_Mobile_Web> {
           const PopupMenuItem<SampleItem>(
             value: SampleItem.personalized_rec,
             child: Text('Personalized Recommendations'),
+          ),
+          const PopupMenuItem<SampleItem>(
+            value: SampleItem.view_profile,
+            child: Text('View Profile'),
+          ),
+          const PopupMenuItem<SampleItem>(
+            value: SampleItem.signout,
+            child: Text('Sign Out'),
           ),
         ],
       ),

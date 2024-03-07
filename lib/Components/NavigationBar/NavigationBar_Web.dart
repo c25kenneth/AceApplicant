@@ -8,12 +8,15 @@ class NavigationBar_Web extends StatefulWidget {
   State<NavigationBar_Web> createState() => _NavigationBar_WebState();
 }
 
+enum SampleItem { profile, signout }
+
 class _NavigationBar_WebState extends State<NavigationBar_Web> {
   int _selectedIndex = 0;
   NavigationRailLabelType labelType = NavigationRailLabelType.all;
   bool showLeading = true;
   bool showTrailing = false;
   double groupAlignment = -1.0;
+  SampleItem? selectedItem;
 
   @override
   Widget build(BuildContext context) {
@@ -30,19 +33,30 @@ class _NavigationBar_WebState extends State<NavigationBar_Web> {
       },
       labelType: labelType,
       leading: showLeading
-          ? Container(
-              margin: const EdgeInsets.fromLTRB(0, 0, 0, 20),
-              child: FloatingActionButton(
-                elevation: 0,
-                onPressed: () {
-                  // Add your onPressed code here!
-                },
-                child: const Icon(
-                  Icons.person,
-                  color: Colors.white,
-                ),
-                backgroundColor: Colors.blue[400],
+          ? PopupMenuButton<SampleItem>(
+              icon: Icon(
+                Icons.person,
+                color: Colors.white,
+                size: 45,
               ),
+              initialValue: selectedItem,
+              onSelected: (SampleItem item) {
+                setState(() {
+                  selectedItem = item;
+                });
+                print(selectedItem);
+              },
+              itemBuilder: (BuildContext context) =>
+                  <PopupMenuEntry<SampleItem>>[
+                const PopupMenuItem<SampleItem>(
+                  value: SampleItem.profile,
+                  child: Text('View Profile'),
+                ),
+                const PopupMenuItem<SampleItem>(
+                  value: SampleItem.signout,
+                  child: Text('Sign Out'),
+                ),
+              ],
             )
           : const SizedBox(),
       trailing: showTrailing
